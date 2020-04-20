@@ -1,11 +1,9 @@
 package br.com.teste.demoapi.controller;
 
-
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 
 @RestController
 public class controller {
@@ -19,5 +17,8 @@ public class controller {
     	return String.format(template, counter);
     }
 
-
+    @RequestMapping("/bancodedados")
+    public String getBD() {
+    	return String.format(new Conexao().getStatusConexao());
+    }
 }
